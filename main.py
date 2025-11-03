@@ -10,6 +10,7 @@ from node import agent_node,qa_tool,summary_tool
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import uvicorn
+import os
 
 # Initialize Fast API application
 app = FastAPI()
@@ -17,6 +18,9 @@ app = FastAPI()
 # Global Variable
 retriever = None
 llm = None
+
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://ollama:11434")
+
 
 class QueryResponse(BaseModel):
     route: str
@@ -27,15 +31,6 @@ class HealthResponse(BaseModel):
     status: str
     message: str
 
-class QueryRequest(BaseModel):
-    query: str
-    
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "query": "What are the issues reported on email notification?"
-            }
-        }
 
 def load_documents():
     # Load file documents
@@ -84,13 +79,13 @@ def initialize_rag_system():
     # Create vector store and retriever
     retriever = Chroma.from_documents(
         documents=docs_splitter,
-        embedding=OllamaEmbeddings(model="nomic-embed-text"),
+        embedding=OllamaEmbeddings(model="nomic-embed-text",base_url=OLLAMA_BASE_URL),
         collection_name="rag-chroma",
         persist_directory="./chromadb"
     ).as_retriever()
 
     # Initialize LLM
-    llm = ChatOllama(temperature=0, model="mistral:instruct")
+    llm = ChatOllama(temperature=0, model="mistral:instruct",  base_url=OLLAMA_BASE_URL)
 
 @app.on_event("startup")
 async def startup_event():
