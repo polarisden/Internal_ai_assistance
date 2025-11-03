@@ -1,0 +1,12 @@
+FROM ollama/ollama:latest
+
+# Start Ollama, pull models, then stop
+RUN /bin/ollama serve & \
+    sleep 5 && \
+    ollama pull nomic-embed-text && \
+    ollama pull mistral:instruct && \
+    pkill ollama
+
+# Default entrypoint
+ENTRYPOINT ["/bin/ollama"]
+CMD ["serve"]

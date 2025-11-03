@@ -1,0 +1,51 @@
+﻿Okay, here are 50 distinct customer feedback snippets, following the format you requested:
+Feedback #1: I tried uploading a large PDF, and it just got stuck at the very end. It says 99% for ages!
+Feedback #2: The search is useless when I look for things like "CEO". It just finds documents with the letters C, E, and O separately.
+Feedback #3: Why are all the pictures in this document preview broken? It makes it impossible to understand.
+Feedback #4: When I click on page 3 of the search results, it keeps taking me back to page 1. Very frustrating!
+Feedback #5: On my phone, some of the buttons are overlapping each other. I can't even click the right one.
+Feedback #6: I tried to filter documents from last month, but the list doesn't seem right. There are definitely documents missing.
+Feedback #7: I'm not getting any email notifications when someone shares a document with me. I missed an important update!
+Feedback #8: The file size shown for my uploads is all wrong. A 10MB file is showing as 10KB.
+Feedback #9: I accidentally typed a really long search term, and the whole app seemed to freeze for a bit.
+Feedback #10: I can't download a simple text file. The download button is just greyed out.
+Feedback #11: The little icons at the top are all wonky and not lined up properly.
+Feedback #12: The message after I updated my profile had a typo. It said 'Sucessfully' instead of 'Successfully'.
+Feedback #13: I tried to share a document with someone who doesn't have an account, and it just failed silently. No error message at all.
+Feedback #14: The highlights I made on a document on my tablet didn't save when I closed and reopened it.
+Feedback #15: It takes forever to load my documents list. I have hundreds of files, and it just crawls.
+Feedback #16: The text on some of the buttons is really hard to read because of the background color. It's not very accessible.
+Feedback #17: Sometimes, random scrollbars appear on the side of the page even when there's nothing to scroll.
+Feedback #18: I tried to delete a document, and it just disappeared without even asking if I was sure.
+Feedback #19: When I hover over some of the icons, the little help text doesn't show up.
+Feedback #20: The loading bar finished really quickly, but the task was still running in the background. It was confusing.
+Feedback #21: When I first log in and don't have any documents, the page is just blank. It should tell me what to do.
+Feedback #22: I can't use my keyboard to navigate through some parts of the app. I have to use the mouse.
+Feedback #23: Sharing with my colleague Sarah doesn't work for some reason. It keeps failing.
+Feedback #24: The drawing tool in the annotation doesn't seem to save properly. My scribbles disappear.
+Feedback #25: I can't find older versions of a document in the history. I know I made changes before these ones.
+Feedback #26: I tried to delete a document, and nothing happened. It's still there.
+Feedback #27: I can't update my email address in my profile settings. It just gives me an error.
+Feedback #28: The password reset link I received in my email expired before I even had a chance to click it.
+Feedback #29: I can't import files from my Dropbox sometimes. It just says 'Error'.
+Feedback #30: When two of us are editing the same document, our changes don't always show up for each other right away.
+Feedback #31: The navigation menu on my phone is all jumbled up.
+Feedback #32: There's a spelling mistake on the login page.
+Feedback #33: I can't seem to share multiple documents at once.
+Feedback #34: The undo button after I make an annotation doesn't work.
+Feedback #35: The search results don't seem to be ordered by relevance.
+Feedback #36: My battery drains really fast when I have this app open in the background.
+Feedback #37: Sometimes when I tap on things, it doesn't respond right away.
+Feedback #38: I can't access my downloaded documents when I'm offline.
+Feedback #39: The app asked for my location even though I wasn't doing anything that needed it.
+Feedback #40: When I turn my phone sideways, the screen layout gets all messed up.
+Feedback #41: The keyboard covers the text box when I'm trying to type a comment.
+Feedback #42: I couldn't even install the app on my old phone.
+Feedback #43: My computer fan goes crazy when I'm uploading a lot of documents.
+Feedback #44: I keep getting disconnected from the server randomly.
+Feedback #45: I set up a reminder, but it never went off.
+Feedback #46: The app is really slow sometimes, especially when I'm switching between documents.
+Feedback #47: My app crashed for no reason while I was in the middle of editing.
+Feedback #48: I got blocked from searching for a while after doing just a few searches.
+Feedback #49: The error messages I get aren't very helpful. They don't tell me what to do.
+Feedback #50: I'm worried about the security of my documents because the app feels a bit buggy.

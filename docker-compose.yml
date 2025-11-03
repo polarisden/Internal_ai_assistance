@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  ollama:
+    build:
+      context: .
+      dockerfile: Dockerfile.ollama
+    image: polaris0075/internal_ai_assistance:ollama  # เปลี่ยนชื่อ
+    container_name: ollama
+    ports:
+      - "11434:11434"
+
+  api:
+    build: .
+    image: polaris0075/internal_ai_assistance:api  # เปลี่ยนชื่อ
+    container_name: internal_ai_assistant
+    ports:
+      - "8000:8000"
+    depends_on:
+      - ollama
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+    volumes:
+      - ./chromadb:/main/chromadb
+      - ./ai_test_bug_report.txt:/main/ai_test_bug_report.txt
+      - ./ai_test_user_feedback.txt:/main/ai_test_user_feedback.txt
+    restart: on-failure

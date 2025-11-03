@@ -1,0 +1,602 @@
+﻿Bug #1
+Title: Document Upload Stuck at 99%
+Description: When uploading large PDF documents (>50MB), the progress bar often gets stuck at 99% and never completes, even though the file appears to be uploaded successfully in the backend.
+Steps to Reproduce:
+1. Navigate to the document upload section.
+2. Select a PDF file larger than 50MB.
+3. Observe the progress bar.
+Environment: Web (Chrome 123.x), Backend v1.0.5
+Severity: Medium
+Proposed Fix: Investigate potential race condition or finalization issue in the upload progress tracking.
+
+
+
+
+Bug #2
+Title: Incorrect Search Results for Acronyms
+Description: Searching for acronyms (e.g., "AI") returns irrelevant documents that contain the individual letters but not the acronym itself.
+Steps to Reproduce:
+1. Enter "AI" in the search bar.
+2. Review the returned documents.
+Environment: All platforms, Search Engine v2.1
+Severity: Low
+Proposed Fix: Implement acronym recognition and prioritize exact matches in search results.
+
+
+
+
+Bug #3
+Title: Broken Image Links in Document Preview
+Description: Images embedded within certain uploaded documents are not displayed correctly in the preview pane, showing broken image icons instead.
+Steps to Reproduce:
+1. Upload a document containing images (e.g., a DOCX file).
+2. Open the document preview.
+3. Observe broken image links.
+Environment: Web (All browsers), Document Previewer v0.8
+Severity: Medium
+Proposed Fix: Ensure correct handling of embedded image paths during document preview generation.
+
+
+
+
+Bug #4
+Title: Pagination Issues on Search Results Page
+Description: When navigating through multiple pages of search results, clicking on a page number sometimes leads back to the first page.
+Steps to Reproduce:
+1. Perform a search that returns more than 10 results.
+2. Navigate to the second or subsequent page.
+3. Click on a different page number.
+Environment: Web (All browsers), Frontend v3.2.1
+Severity: Medium
+Proposed Fix: Debug the pagination logic and ensure correct state management.
+
+
+
+
+Bug #5
+Title: User Interface Overlap on Small Screens
+Description: On mobile devices with smaller screen sizes, some UI elements overlap, making it difficult to interact with the application.
+Steps to Reproduce:
+1. Access the application on a device with a screen width less than 375px.
+2. Navigate to various sections of the app.
+3. Observe UI element overlap.
+Environment: Mobile (iOS and Android), Responsive Design v1.0
+Severity: Medium
+Proposed Fix: Adjust CSS and responsive design breakpoints for smaller screens.
+
+
+
+
+Bug #6
+Title: Date Filter Not Working Correctly
+Description: Filtering documents by date range does not consistently return the expected results. Some documents within the specified range are missing, while others outside the range are included.
+Steps to Reproduce:
+1. Navigate to the document library.
+2. Apply a date filter (e.g., "Last Month").
+3. Review the filtered documents.
+Environment: All platforms, Filtering Module v1.5
+Severity: Medium
+Proposed Fix: Review and correct the date comparison logic in the filtering mechanism.
+
+
+
+
+Bug #7
+Title: Email Notifications Not Being Sent
+Description: Users are not receiving email notifications for document updates or shared content, even though email notifications are enabled in their settings.
+Steps to Reproduce:
+1. Trigger an event that should send an email notification (e.g., a document is shared with the user).
+2. Check the user's email inbox (and spam folder).
+Environment: Backend v1.0.5, Email Service Integration v0.3
+Severity: High
+Proposed Fix: Investigate the email sending queue and the integration with the email service provider.
+
+
+
+
+Bug #8
+Title: Incorrect Display of File Size
+Description: The file size of uploaded documents is sometimes displayed incorrectly (e.g., showing KB instead of MB, or incorrect numerical values).
+Steps to Reproduce:
+1. Upload a document.
+2. View the file size in the document library.
+Environment: Web (All browsers), Frontend v3.2.1
+Severity: Low
+Proposed Fix: Ensure correct calculation and formatting of file sizes.
+
+
+
+
+Bug #9
+Title: Search Query Limits Not Enforced
+Description: Users can enter extremely long search queries, potentially causing performance issues or errors in the search engine.
+Steps to Reproduce:
+1. Enter a very long string of text into the search bar (e.g., >500 characters).
+2. Initiate the search.
+Environment: All platforms, Search Engine v2.1
+Severity: Low
+Proposed Fix: Implement a reasonable character limit for search queries on the frontend and backend.
+
+
+
+
+Bug #10
+Title: Download Button Disabled for Certain File Types
+Description: The download button is unexpectedly disabled for specific file types (e.g., .txt files), preventing users from downloading them.
+Steps to Reproduce:
+1. Navigate to a document of the affected file type.
+2. Observe the state of the download button.
+Environment: Web (All browsers), Document Management Module v2.0
+Severity: Medium
+Proposed Fix: Verify the logic that controls the download button's state based on file type.
+
+
+
+
+Bug #11
+Title: Misaligned Icons in Navigation Bar
+Description: The icons in the main navigation bar are slightly misaligned vertically, creating a visually inconsistent appearance.
+Steps to Reproduce:
+1. Navigate to any page in the application.
+2. Observe the icons in the top navigation bar.
+Environment: Web (All browsers), Frontend v3.2.1
+Severity: Low
+Proposed Fix: Adjust CSS to ensure proper vertical alignment of navigation icons.
+
+
+
+
+Bug #12
+Title: Typos in 'Successfully Updated' Message
+Description: The success message displayed after updating user profile information contains a typographical error ("Sucessfully updated").
+Steps to Reproduce:
+1. Navigate to the user profile settings.
+2. Make changes to any field and save.
+3. Observe the displayed success message.
+Environment: All platforms, Frontend v3.2.1
+Severity: Low
+Proposed Fix: Correct the spelling in the success message string.
+
+
+
+
+Bug #13
+Title: Document Sharing Fails for External Users
+Description: When attempting to share documents with users who do not have an existing account in the application, the sharing process fails without a clear error message.
+Steps to Reproduce:
+1. Navigate to a document.
+2. Click the "Share" button.
+3. Enter the email address of a user not registered in the app.
+4. Attempt to share the document.
+Environment: All platforms, Sharing Module v1.2
+Severity: Medium
+Proposed Fix: Implement proper handling for sharing with external users, including invitation workflows.
+
+
+
+
+Bug #14
+Title: Annotation Tools Not Saving on Mobile
+Description: Annotations added to documents on mobile devices are not consistently saved when the user exits the document preview.
+Steps to Reproduce:
+1. Open a document on a mobile device.
+2. Use the annotation tools to add highlights or notes.
+3. Exit and re-open the document.
+4. Observe if the annotations are saved.
+Environment: Mobile (iOS and Android), Document Previewer v0.8
+Severity: Medium
+Proposed Fix: Investigate local storage or synchronization issues with annotations on mobile.
+
+
+
+
+Bug #15
+Title: Slow Loading Times for Large Document Libraries
+Description: Users with a large number of documents in their library experience significant delays when loading the document list view.
+Steps to Reproduce:
+1. Log in to an account with more than 500 documents.
+2. Navigate to the document library.
+3. Observe the loading time.
+Environment: All platforms, Backend v1.0.5, Database
+Severity: Medium
+Proposed Fix: Optimize database queries and implement pagination or virtual scrolling for large libraries.
+
+
+
+
+Bug #16
+Title: Color Contrast Issues Affecting Accessibility
+Description: Certain text elements have insufficient color contrast against their background, making them difficult to read for users with visual impairments.
+Steps to Reproduce:
+1. Navigate to various sections of the application.
+2. Inspect text elements and their background colors.
+Environment: Web (All browsers), Frontend v3.2.1
+Severity: Medium
+Proposed Fix: Adjust color palettes to meet WCAG accessibility guidelines for color contrast.
+
+
+
+
+Bug #17
+Title: Unexpected Scrollbars Appearing
+Description: Horizontal or vertical scrollbars sometimes appear in sections where the content should fit without scrolling.
+Steps to Reproduce:
+1. Navigate to different pages and sections.
+2. Observe for the presence of unnecessary scrollbars.
+Environment: Web (All browsers), Frontend v3.2.1
+Severity: Low
+Proposed Fix: Review CSS layout and ensure proper overflow handling.
+
+
+
+
+Bug #18
+Title: Confirmation Dialogs Not Appearing
+Description: Certain actions that should trigger a confirmation dialog (e.g., deleting a document) proceed without any confirmation prompt.
+Steps to Reproduce:
+1. Attempt to perform an action that should require confirmation.
+2. Observe if a confirmation dialog is displayed.
+Environment: All platforms, User Interface Components v1.1
+Severity: Medium
+Proposed Fix: Ensure all critical actions have appropriate confirmation dialogs implemented.
+
+
+
+
+Bug #19
+Title: Tooltips Not Displaying Correctly
+Description: Tooltips for certain UI elements are either not appearing when hovered over or are displaying incorrect information.
+Steps to Reproduce:
+1. Hover the mouse over various interactive elements.
+2. Observe if a tooltip appears and if its content is correct.
+Environment: Web (All browsers), Frontend v3.2.1
+Severity: Low
+Proposed Fix: Review and fix the implementation of tooltip functionality and content.
+
+
+
+
+Bug #20
+Title: Progress Indicators Disappearing Prematurely
+Description: Progress indicators for long-running tasks sometimes disappear before the task is actually completed, leading to user confusion.
+Steps to Reproduce:
+1. Initiate a long-running task (e.g., large file processing).
+2. Observe the behavior of the progress indicator.
+Environment: All platforms, User Interface Components v1.1
+Severity: Medium
+Proposed Fix: Ensure progress indicators remain visible until the associated task is fully completed.
+
+
+
+
+Bug #21
+Title: Empty States Not Handled Gracefully
+Description: When sections of the application have no data to display, the empty state is either blank or displays an unhelpful message.
+Steps to Reproduce:
+1. Navigate to sections that might be empty (e.g., a newly created user's document library).
+2. Observe the displayed content.
+Environment: All platforms, Frontend v3.2.1
+Severity: Low
+Proposed Fix: Implement informative and user-friendly empty state messages and potentially suggestions for the user.
+
+
+
+
+Bug #22
+Title: Keyboard Navigation Issues
+Description: Users relying on keyboard navigation are unable to access or interact with certain UI elements effectively.
+Steps to Reproduce:
+1. Navigate through the application using only the keyboard (Tab key, arrow keys, Enter).
+2. Identify elements that cannot be reached or interacted with.
+Environment: Web (All browsers), Accessibility
+Severity: Medium
+Proposed Fix: Improve keyboard focus management and ensure all interactive elements are accessible via keyboard.
+
+
+
+
+Bug #23
+Title: Document Sharing Failing for Specific Users
+Description: Attempting to share documents with a particular subset of users consistently fails, potentially due to user-specific permissions or account issues.
+Steps to Reproduce:
+1. Navigate to a document.
+2. Click the "Share" button.
+3. Select or enter the email address of an affected user.
+4. Attempt to share the document and observe the failure.
+Environment: All platforms, Sharing Module v1.2, User Management
+Severity: Medium
+Proposed Fix: Investigate user-specific permissions and account settings for the affected users.
+
+
+
+
+Bug #24
+Title: Annotation Tools Not Saving Correctly
+Description: Annotations made using specific tools (e.g., highlighting) are not being saved reliably, or the saved annotations appear incorrectly.
+Steps to Reproduce:
+1. Open a document and use a specific annotation tool.
+2. Save the document and re-open it.
+3. Verify if the annotations are saved correctly.
+Environment: Web (All browsers), Document Previewer v0.8
+Severity: Medium
+Proposed Fix: Debug the saving mechanism for the affected annotation tools.
+
+
+
+
+Bug #25
+Title: Version History Not Displaying All Versions
+Description: The version history for some documents is missing older versions, preventing users from reverting to previous states.
+Steps to Reproduce:
+1. Navigate to a document with multiple edits.
+2. Open the version history.
+3. Compare the displayed versions with the expected number of versions.
+Environment: All platforms, Document Management Module v2.0
+Severity: Medium
+Proposed Fix: Investigate the version control system and ensure all versions are being stored and displayed correctly.
+
+
+
+
+Bug #26
+Title: Document Deletion Not Working
+Description: Users are unable to delete documents from their library. The delete action either fails silently or displays an error message.
+Steps to Reproduce:
+1. Navigate to the document library.
+2. Select a document.
+3. Attempt to delete the document.
+4. Observe the outcome.
+Environment: All platforms, Document Management Module v2.0
+Severity: High
+Proposed Fix: Investigate the document deletion process and backend logic for potential errors.
+
+
+
+
+Bug #27
+Title: User Profile Updates Failing
+Description: Users are experiencing issues when trying to update their profile information (e.g., name, email). The changes are either not saved or an error occurs.
+Steps to Reproduce:
+1. Navigate to the user profile settings.
+2. Modify any profile information.
+3. Attempt to save the changes.
+4. Observe if the changes are saved successfully or if an error occurs.
+Environment: All platforms, User Management
+Severity: Medium
+Proposed Fix: Review the user profile update API and database interactions.
+
+
+
+
+Bug #28
+Title: Password Reset Link Expired Too Quickly
+Description: The password reset links sent to users expire within an unexpectedly short timeframe, making it difficult for them to reset their passwords.
+Steps to Reproduce:
+1. Initiate the password reset process.
+2. Wait for the password reset email.
+3. Attempt to use the link after a short period (e.g., 15 minutes).
+4. Observe if the link is still valid.
+Environment: All platforms, Authentication Module
+Severity: Medium
+Proposed Fix: Increase the expiration time for password reset links to a more reasonable duration.
+
+
+
+
+Bug #29
+Title: Integration with External Services Failing Intermittently
+Description: The integration with external services (e.g., cloud storage providers) fails sporadically, preventing users from importing or exporting documents.
+Steps to Reproduce:
+1. Attempt to import or export a document using an integrated external service.
+2. Observe if the process succeeds or fails.
+Environment: All platforms, Integrations Module v0.5
+Severity: Medium
+Proposed Fix: Investigate the API communication with the external services and implement robust error handling and retry mechanisms.
+
+
+
+
+Bug #30
+Title: Real-Time Collaboration Features Not Syncing Reliably
+Description: When multiple users are collaborating on a document in real-time, changes made by one user are not always reflected promptly for other users.
+Steps to Reproduce:
+1. Open a document with real-time collaboration enabled.
+2. Have multiple users edit the document simultaneously.
+3. Observe the synchronization of changes across different users' views.
+Environment: Web (All browsers), Collaboration Module v0.1
+Severity: High
+Proposed Fix: Debug the real-time synchronization mechanism and ensure reliable communication between clients and the server.
+
+
+
+
+Bug #31
+Title: Bulk Actions Failing Without Error Messages
+Description: When performing bulk actions (e.g., deleting multiple documents), the actions sometimes fail without providing any error feedback to the user.
+Steps to Reproduce:
+1. Select multiple documents in the library.
+2. Attempt to perform a bulk action (e.g., delete).
+3. Observe if the action succeeds or fails, and if any error message is displayed.
+Environment: Web (All browsers), Document Management Module v2.0
+Severity: Medium
+Proposed Fix: Implement proper error handling and display informative messages for failed bulk actions.
+
+
+
+
+Bug #32
+Title: Importing Documents from Cloud Storage Failing
+Description: Users are unable to import documents from connected cloud storage accounts. The import process either hangs or results in an error.
+Steps to Reproduce:
+1. Navigate to the document import section.
+2. Select the option to import from a connected cloud storage account.
+3. Choose a file to import.
+4. Observe if the import process completes successfully or fails.
+Environment: All platforms, Integrations Module v0.5
+Severity: Medium
+Proposed Fix: Review the authentication and file retrieval process for the cloud storage integration.
+
+
+
+
+Bug #33
+Title: App Crashing on Specific Device Models (Mobile)
+Description: The mobile application crashes consistently on certain specific device models or operating system versions.
+Steps to Reproduce:
+1. Install and open the application on an affected device model.
+2. Perform specific actions within the app (if a crash doesn't occur on startup).
+3. Observe the app crashing.
+Environment: Mobile (Specific iOS/Android versions and device models)
+Severity: High
+Proposed Fix: Investigate device-specific compatibility issues and address any underlying code errors.
+
+
+
+
+Bug #34
+Title: Push Notifications Not Being Received (Mobile)
+Description: Users are not receiving push notifications for important events, even though notifications are enabled in the app settings and device settings.
+Steps to Reproduce:
+1. Trigger an event that should send a push notification.
+2. Check the device's notification center.
+Environment: Mobile (iOS and Android), Push Notification Service Integration
+Severity: Medium
+Proposed Fix: Verify the integration with the push notification service provider and ensure correct token registration and delivery.
+
+
+
+
+Bug #36
+Title: Battery Drain Issues When App is in Background (Mobile)
+Description: The mobile application consumes an excessive amount of battery even when running in the background.
+Steps to Reproduce:
+1. Open the application on a mobile device.
+2. Navigate through some sections.
+3. Move the app to the background and leave it for a period of time.
+4. Observe the battery usage in the device settings.
+Environment: Mobile (iOS and Android)
+Severity: Medium
+Proposed Fix: Optimize background processes and reduce resource consumption when the app is not in active use.
+
+
+
+
+Bug #37
+Title: Touch Responsiveness Issues (Mobile)
+Description: Users are experiencing lag or unresponsiveness to touch inputs in certain areas or during specific interactions within the mobile application.
+Steps to Reproduce:
+1. Open the application on a mobile device.
+2. Navigate to the affected areas or perform the specific interactions.
+3. Observe the responsiveness to touch inputs.
+Environment: Mobile (iOS and Android)
+Severity: Medium
+Proposed Fix: Investigate and optimize touch event handling in the affected parts of the application.
+
+
+
+
+Bug #38
+Title: Offline Mode Not Working as Expected (Mobile)
+Description: The offline mode of the application does not allow users to access previously viewed documents or features as intended when there is no network connection.
+Steps to Reproduce:
+1. Open the application and view some documents.
+2. Disconnect the device from the internet.
+3. Attempt to access the previously viewed documents or offline features.
+4. Observe the behavior of the application.
+Environment: Mobile (iOS and Android)
+Severity: Medium
+Proposed Fix: Review and fix the implementation of the offline data caching and retrieval mechanisms.
+
+
+
+
+Bug #39
+Title: Location Services Not Being Used Correctly (Mobile)
+Description: The application requests or uses location services in unexpected situations or does not utilize location services when it should.
+Steps to Reproduce:
+1. Navigate through different sections of the app.
+2. Observe when and how the application requests or uses location permissions.
+Environment: Mobile (iOS and Android)
+Severity: Medium
+Proposed Fix: Review the application's logic for requesting and using location services and ensure it aligns with the intended functionality and user privacy.
+
+
+
+
+Bug #40
+Title: App Not Adapting to Device Orientation Changes (Mobile)
+Description: The layout of the application does not always adapt correctly when the device orientation is changed between portrait and landscape modes.
+Steps to Reproduce:
+1. Open the application on a mobile device.
+2. Navigate to various screens.
+3. Rotate the device between portrait and landscape orientations.
+4. Observe if the layout adjusts correctly.
+Environment: Mobile (iOS and Android)
+Severity: Low
+Proposed Fix: Ensure proper implementation of responsive layout for different device orientations.
+
+
+
+
+Bug #41
+Title: Keyboard Obscuring Input Fields (Mobile)
+Description: On mobile devices, the on-screen keyboard sometimes obscures input fields, making it difficult for users to see what they are typing.
+Steps to Reproduce:
+1. Navigate to screens with input fields.
+2. Tap on an input field to bring up the keyboard.
+3. Observe if the keyboard obscures the input field.
+Environment: Mobile (iOS and Android)
+Severity: Medium
+Proposed Fix: Adjust the layout or implement scrolling to ensure input fields are visible above the keyboard.
+
+
+
+
+Bug #42
+Title: Installation Failures on Certain OS Versions (Mobile)
+Description: The mobile application fails to install correctly on specific older versions of iOS or Android.
+Steps to Reproduce:
+1. Attempt to install the application on a device running the affected OS version.
+2. Observe the installation process and any error messages.
+Environment: Mobile (Specific older iOS/Android versions)
+Severity: High
+Proposed Fix: Investigate compatibility issues with the affected OS versions and address any code dependencies or platform limitations.
+
+
+
+
+Bug #43
+Title: Slow CPU Usage on Server During Indexing (Backend)
+Description: The backend server experiences high CPU usage during the document indexing process, potentially impacting the performance of other application features.
+Steps to Reproduce:
+1. Upload a large number of documents.
+2. Monitor the server's CPU usage during the indexing process.
+Environment: Backend v1.0.5, Server Infrastructure
+Severity: Medium
+Proposed Fix: Optimize the indexing algorithm and resource allocation to reduce CPU load.
+
+
+
+
+Bug #44
+Title: Database Connection Errors Occurring Sporadically (Backend)
+Description: The application experiences intermittent database connection errors, leading to temporary disruptions in functionality.
+Steps to Reproduce:
+1. Use the application for an extended period.
+2. Monitor server logs for database connection errors.
+Environment: Backend v1.0.5, Database
+Severity: High
+Proposed Fix: Investigate the cause of the database connection instability and implement more robust connection management and error handling.
+
+
+
+
+Bug #45
+Title: Background Jobs Failing Silently (Backend)
+Description: Some background jobs (e.g., scheduled data processing) are failing without any error messages or logging, making it difficult to identify and resolve the issues.
+Steps to Reproduce:
+1. Monitor the status of background jobs.
+2. Observe if any jobs are failing without any indication in the logs.
+Environment: Backend v1.0.5, Background Job Manager
+Severity: Medium
+Proposed Fix: Implement proper logging and monitoring for all background jobs to track their status and any errors.
